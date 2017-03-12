@@ -1,0 +1,36 @@
+{
+  "name": "MSE",
+  "version": "1.0.0",
+  "description": "MSE website ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node node_modules/gulp/bin/gulp.js auto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosephMart/MSE.git"
+  },
+  "author": "Joseph Martinsen",
+  "license": "MIT",
+  "homepage": "joseph.martinsen.com/mse",
+  "bugs": {
+    "url": "https://github.com/JosephMart/MSE/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-connect-php": "0.0.8",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-image": "^2.7.5",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11"
+  }
+}

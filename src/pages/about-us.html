@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% set title = 'About' %}
+{% set page = 'about-us' %}
+
+{% block content %}
+<div style="height: 80px;"></div>
+<div class="container">
+       <div class="row wow fadeInDown" data-wow-duration="800ms" data-wow-delay="300ms">
+           <div class="col-lg-12">
+			<div class="page-header">
+			   <h1>
+				   About Us
+               </h1>
+		   </div>
+                   <small>It's Nice to Meet You!</small>
+               <p style="color:black;">
+                 Martinsen Software &amp; Electronics is an IT consultancy firm as well as a reseller of hardware and software. We've been around since 1993 serving the needs of schools, medical and professional offices and warehouses in the Houston area with our consultancy and around the world with our products and services.
+               </p>
+           </div>
+       </div>
+<div class="row">
+    <div class="col-lg-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+        <h2 class="page-header">Leaders</h2>
+    </div>
+    <div class="col-lg-6 col-sm-6 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+        <img class="img-circle img-responsive img-center center-block about-img" src="images/hollis.jpg" alt="">
+        <h2>Hollis Martinsen <br>
+            <small>President/Engineer</small>
+        </h2>
+        <!-- <p>He's the top dog</p> -->
+    </div>
+    <div class="col-lg-6 col-sm-6 text-center wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+        <img class="img-circle img-responsive img-center center-block about-img" src="images/joseph.jpg" alt="">
+        <h2>Joseph Martinsen<br>
+            <small>Lead Developer</small>
+        </h2>
+        <!-- <p>Currently a fulltime student at Texas A&amp;M University, also works during the summer.</p> -->
+    </div>
+</div>
+</div>
+
+{% endblock content %}
