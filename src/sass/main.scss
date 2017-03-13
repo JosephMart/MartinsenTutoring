@@ -6,7 +6,7 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('animate.css');
 
-$primary-color: #69B5E2;
+$primary-color: #e80932;
 $footer_h: 190px;
 
 html { height: 100%; }
@@ -216,7 +216,7 @@ a {
       rgba(255, 255, 0, 0.45)
     ),
     /* bottom, image */
-    url(images/slider/bg1.jpg);
+    url(images/mathematics1.jpg);
 }
 
 #main-slider {
@@ -1201,4 +1201,8 @@ a.scrollup {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 20px;
+}
+
+.black {
+	color: black;
 }
