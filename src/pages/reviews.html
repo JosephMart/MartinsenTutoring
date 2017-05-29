@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% set title = 'Reviews' %}
+{% set page = 'reviews' %}
+
+{% set reviews = [
+    { "title": "Need a Calculus Tutor", "name": "Melissa C.", "text": "Basically had 5 days to bring up my average for college Cal I in the Summer. Hollis was the first to call me when I placed an interest in tutoring ... and not only that, he made himself readily available everyday after. He had a gigantic challenge with only 5 days before the final. He doesn't just sit there and give you the answers, he works with you and focuses on your weaknesses. He was able to get me to understand concepts that I never understood up until now. I passed Cal I! Highly recommended to use Hollis before going to any other tutor. He is extremely intelligent and is able to explain difficult concepts easily.", "stars": "5", "date": "July 16, 2016"},
+
+    { "title": "Calculus Tutoring", "name": "Gina D.", "text": "Mr. Martinsen is providing college Calculus 1 and will be providing Calculus 2 tutoring. He is very patient and has been flexible with his scheduling. He really understands the material and explains with ease.", "stars": "5", "date": "February 14, 2017"},
+
+    { "title": "Calculus Tutoring", "name": "Charlene A.", "text": "was a HUGE help!", "stars": "5", "date": "May 11, 2016"},
+
+    { "title": "Precalculus Tutoring", "name": "Lisa R.", "text": "Hollis was very patient and thorough in tutoring my daughter. He seems very passionate about making sure his students are understanding the subject material.", "stars": "5", "date": "February 29, 2016 "},
+
+    { "title": "Need ACT Tutor", "name": "Fran W.", "text": "Easy to work with. Very organized. Connected well with my son and was honest about what was needed and what could be realistically accomplished.", "stars": "4", "date": "October 1, 2015 "},
+
+    { "title": "Need Calculus Tutor", "name": "Josh O.", "text": "A good calculus tutor", "stars": "5", "date": "August 5, 2015"},
+
+
+    { "title": "Need an Algebra Tutor", "name": "Leonard S.", "text": "Hollis has been tutoring my Sophmore son in Algebra 2 since late February. His approach is very formalized, he works with your child to ensure they understand the problem so that they are not simply writing down answers. I highly recommend Hollis for math tutoring. As with many service provider's I always take the time to confirm an appointment via text.", "stars": "5", "date": "April 17, 2015"}
+] %}
+
+{% block content %}
+<div style="height: 80px;"></div>
+
+<div class="container">
+    <div class="col-lg-12 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+        <h2 class="page-header">Reviews</h2>
+    </div>
+    {% for review in reviews %}
+    <div class="row-fluid">
+      <div class="col-sm-12" data-wow-duration="1000ms" data-wow-delay="1000ms">
+          <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{review.title}}</h3>
+          </div><!--/panel-heading-->
+          <div class="panel-body">
+            <p>{{review.text}}</p>
+            <span style="color:black;">
+              <small>
+              <span>-- {{review.name}}</span>
+          </small>
+            </span><!--/author schema -->
+
+              <span style="color:black;">
+                <small>
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                {{review.date}}
+              </span><!--/author schema -->
+
+              <span class="pull-right" style="color:black;">
+                  {{review.stars}}/5 stars
+                {% for i in range(0, review.stars) %}
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                {% endfor %}
+            </small>
+          </div><!--/panel-body-->
+          <div class="panel-footer clearfix"></div><!--/panel-footer-->
+        </div><!--/panel-->
+      </div><!--/col-sm-6-->
+  </div><!--/row (1) -->
+  {% endfor %}
+  </div><!--/container-->
+{% endblock content %}
