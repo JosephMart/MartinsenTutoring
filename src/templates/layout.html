@@ -30,6 +30,28 @@
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css">
 
+    <script type="text/javascript">
+        var a = Math.ceil(Math.random() * 10);
+        var b = Math.ceil(Math.random() * 10);
+        var c = a + b
+        function DrawBotBoot()
+        {
+            document.write("<p style=\"color:black;\">Are you human? <br>What is "+ a + " + " + b +"?</p> ");
+            document.write("<input id='BotBootInput' type='text' maxlength='2' size='2' class=\"form-control\"/>");
+        }
+        function ValidBotBoot(){
+            var d = document.getElementById('BotBootInput').value;
+            if (d == c) {
+                document.getElementById("SubmitButton").style.display = 'block';
+                document.getElementById("errorAlert").style.display = 'none';
+                document.getElementById("BotCheck").style.display = 'none';
+            } else {
+                document.getElementById("errorAlert").style.display = 'block';
+            }
+        }
+    </script>
+
+
 	<!-- <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -69,5 +91,13 @@
   {% block js %}
   {% endblock %}
 </body>
+<script type="text/javascript">
+    document.getElementById("contact-form").onkeypress = function(e) {
+      var key = e.charCode || e.keyCode || 0;
+      if (key == 13) {
+        e.preventDefault();
+      }
+    }
+</script>
 
 </html>

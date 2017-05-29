@@ -56,7 +56,17 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn btn-send" value="Send message">
+                                    <input id="SubmitButton" type="submit" class="btn btn-send" value="Send message" style="display:none">
+
+                                    <div id="BotCheck">
+                                        <script type="text/javascript">DrawBotBoot()</script>
+
+                                        <div id="errorAlert" class="alert alert-danger" style="display:none">
+                                            <strong>Try Again</strong> The number entered is not correct.
+                                        </div>
+                                        <input id="Button1" type="button" value="Check" class="btn btn-primary" onclick="ValidBotBoot();"/>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="row">
