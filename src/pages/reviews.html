@@ -29,7 +29,7 @@
     </div>
     {% for review in reviews %}
     <div class="row-fluid">
-      <div class="col-sm-12" data-wow-duration="1000ms" data-wow-delay="1000ms">
+      <div class="col-sm-12 wow fadeInDown" data-wow-duration="750ms" data-wow-delay={{500 + 150 * loop.index + 'ms'}}>
           <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">{{review.title}}</h3>

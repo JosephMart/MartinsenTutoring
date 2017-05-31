@@ -1,14 +1,13 @@
 // gulpfile.js
 const gulp  = require('gulp'),
-    browserSync = require('browser-sync').create(),
-    htmlmin = require('gulp-htmlmin'),
-    nunjucksRender = require('gulp-nunjucks-render');
-    image = require('gulp-image');
-
-var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css');
-var del = require('del');
-var php  = require('gulp-connect-php');
+      browserSync = require('browser-sync').create(),
+      htmlmin = require('gulp-htmlmin'),
+      nunjucksRender = require('gulp-nunjucks-render'),
+      image = require('gulp-image'),
+      sass = require('gulp-sass'),
+      cleanCSS = require('gulp-clean-css'),
+      del = require('del'),
+      php  = require('gulp-connect-php');
 
 const PATHS = {
     output: 'dist',
@@ -19,7 +18,8 @@ const PATHS = {
     fonts: 'src/fonts',
     img: 'src/images',
     fonts: 'src/fonts',
-	php: 'src/php'
+	  php: 'src/php',
+    js: 'src/js'
 }
 
 
@@ -28,12 +28,16 @@ gulp.task('phpServer', function() {
 });
 
 gulp.task('php', function () {
-  gulp.src(PATHS.php + '/*.php')
-    .pipe(gulp.dest(PATHS.output + '/php'));
+  console.log('Moving Php Files');
+  return gulp.src(PATHS.php + '/*.php')
+    .pipe(gulp.dest(PATHS.output + '/php'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 gulp.task('image', function () {
-  gulp.src(PATHS.img + '/**')
+  return gulp.src(PATHS.img + '/**')
     .pipe(image())
     .pipe(gulp.dest(PATHS.output + '/images'));
 });
@@ -44,6 +48,15 @@ gulp.task('minify-css', function() {
   return gulp.src(PATHS.css + '/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest( PATHS.output + '/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
+gulp.task('js', function() {
+  console.log('Moving JS files..');
+  return gulp.src(PATHS.js + '/*.js')
+    .pipe(gulp.dest( PATHS.output + '/js'))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -91,10 +104,12 @@ gulp.task('fonts', function() {
 })
 
 
-gulp.task('watch',['nunjucks', 'browserSync', 'sass', 'minify-css'], function() {
+gulp.task('watch',['nunjucks', 'browserSync', 'sass', 'minify-css', 'js', 'php'], function() {
     gulp.watch([PATHS.pages + '/**/*.+(html|js|css)', PATHS.templates + '/**/*.+(html|js|css)'], ['nunjucks'])
     gulp.watch(PATHS.styles + '/*.scss', ['sass']);
     gulp.watch(PATHS.css + '/*.css', ['minify-css']);
+    gulp.watch(PATHS.js + '/*.js', ['js']);
+    gulp.watch(PATHS.php + '/*.php', ['php']);
 });
 
 gulp.task('minify', function() {
@@ -114,6 +129,6 @@ gulp.task('clean:dist', function() {
 })
 
 // Build all
-gulp.task('build', [`clean:dist`, `sass`, `minify-css`, `image`, `nunjucks`, 'fonts', 'minify'], function (){
+gulp.task('build', [`clean:dist`, `sass`, `minify-css`, `image`, `nunjucks`, 'fonts', 'minify', 'js', 'php'], function (){
   console.log('Building all files');
 })

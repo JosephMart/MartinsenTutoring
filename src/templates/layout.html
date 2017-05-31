@@ -23,13 +23,19 @@
     {% endif %}
     </title>
 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/functions.js"></script>
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/main.css">
+    <link href="css/main.css" rel="stylesheet">
 
     <script type="text/javascript">
         var a = Math.ceil(Math.random() * 10);
@@ -81,24 +87,7 @@
 		</div>
   </div>
 
-  <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.prettyPhoto.js"></script>
-  <script src="js/jquery.isotope.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/functions.js"></script>
-
   {% block js %}
   {% endblock %}
 </body>
-<script type="text/javascript">
-    document.getElementById("contact-form").onkeypress = function(e) {
-      var key = e.charCode || e.keyCode || 0;
-      if (key == 13) {
-        e.preventDefault();
-      }
-    }
-</script>
-
 </html>
